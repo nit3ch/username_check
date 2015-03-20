@@ -55,12 +55,12 @@ class DefaultController extends ControllerBase {
     //drupal_json_output($output);
   }
 
-/**
- * Query user table to check if such username is already exists.
- */
-function _username_check_is_user_exists($username) {
-  return db_query("SELECT COUNT(u.name) count FROM {users_field_data} u WHERE LOWER(u.name) = LOWER(:username)", array(':username' => $username))->fetchField();
-}
+  /**
+  * Query user table to check if such username is already exists.
+  */
+  function _username_check_is_user_exists($username) {
+    return db_query("SELECT COUNT(u.name) count FROM {users_field_data} u WHERE LOWER(u.name) = LOWER(:username)", array(':username' => $username))->fetchField();
+  }
 
   public function username_check_profile_callback() {
     $output = [];
@@ -108,13 +108,13 @@ function _username_check_is_user_exists($username) {
     return new JsonResponse($output);
   }
 
-/**
- * Query user table to check if this is the current user.
- */
-function _username_check_is_current_user($username) {
-  global $user;
-  return db_query("SELECT COUNT(u.name) count FROM {users_field_data} u WHERE LOWER(u.name) = LOWER(:username) AND u.uid =" . $user->uid, array(':username' => $username))->fetchField();
-}
+  /**
+  * Query user table to check if this is the current user.
+  */
+  function _username_check_is_current_user($username) {
+    global $user;
+    return db_query("SELECT COUNT(u.name) count FROM {users_field_data} u WHERE LOWER(u.name) = LOWER(:username) AND u.uid =" . $user->uid, array(':username' => $username))->fetchField();
+  }
 
   public function username_check_mail_callback() {
     $output = [];
@@ -154,11 +154,11 @@ function _username_check_is_current_user($username) {
     return new JsonResponse($output);
   }
 
-/**
- * Query user table to check if such mail is already exists.
- */
-public function _username_check_is_mail_exists($mail) {
-  return db_query("SELECT COUNT(u.mail) count FROM {users_field_data} u WHERE LOWER(u.mail) = LOWER(:mail)", array(':mail' => $mail))->fetchField();
-}
+  /**
+  * Query user table to check if such mail is already exists.
+  */
+  public function _username_check_is_mail_exists($mail) {
+   return db_query("SELECT COUNT(u.mail) count FROM {users_field_data} u WHERE LOWER(u.mail) = LOWER(:mail)", array(':mail' => $mail))->fetchField();
+  }
 
 }

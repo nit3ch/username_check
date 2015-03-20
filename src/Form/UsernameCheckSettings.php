@@ -74,10 +74,6 @@ class UsernameCheckSettings extends ConfigFormBase {
       '#description' => t('Threshold in seconds (ex: 0.5, 1) for the check to happen.'),
       '#default_value' => $config->get('username_check_delay'),
     ];
-
-
-
-
     return parent::buildForm($form, $form_state);
   }
 

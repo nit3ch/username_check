@@ -43,7 +43,8 @@ function username_check_form_user_register_form_alter(&$form) {
 }
 
 function username_check_form_user_form_alter(&$form) {
-  //print_r($form);
+  global $base_url;
+  $module_path = drupal_get_path('module', 'username_check');
   $config = \Drupal::config('username_check.settings');
   $mode = $config->get('username_check_mode');
   $delay = $config->get('username_check_delay');
@@ -57,15 +58,10 @@ function username_check_form_user_form_alter(&$form) {
     )),
     'type' => 'setting',
   );
-    //print_r($form);die();
     $form['account']['name']['#field_suffix'] = '<span id="profile-check-informer">&nbsp;</span>';
     $form['account']['name']['#suffix'] = '<div id="profile-check-message"></div>';
   }
 }
-
-
-
-
 
 function _username_check_mail_load_resources($mode) {
   $module_path = drupal_get_path('module', 'username_check');
