@@ -1,0 +1,9 @@
+name: 'Username available AJAX check'
+description: 'Check username originality on registration or create user form via AJAX request.'
+core: 8.x
+package: Registration
+dependencies:
+  - user
+project: username_check
+datestamp: '1399691628'
+type: module
