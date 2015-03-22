@@ -6,20 +6,20 @@ Drupal.behaviors.profileCheck = {
     $('#profile-check-informer:not(.profile-check-processed)', context)
     .each(function() {
       var input = $(this).parents('.form-item').find('input');
-      
+
       Drupal.profileCheck.profile = '';
       input
       .keyup(function () {
         if(input.val() != Drupal.profileCheck.profile) {
           clearTimeout(Drupal.profileCheck.timer);
-          Drupal.profileCheck.timer = setTimeout(function () {Drupal.profileCheck.check(input)}, parseFloat(Drupal.settings.profileCheck.delay)*1000);
-        
+          Drupal.profileCheck.timer = setTimeout(function () {Drupal.profileCheck.check(input)}, parseFloat(drupalSettings.profileCheck.delay)*1000);
+
           if(!$("#profile-check-informer").hasClass('profile-check-informer-progress')) {
             $("#profile-check-informer")
               .removeClass('profile-check-informer-accepted')
               .removeClass('profile-check-informer-rejected');
           }
-            
+
           $("#profile-check-message")
             .hide();
         }
@@ -28,9 +28,9 @@ Drupal.behaviors.profileCheck = {
         if(input.val() != Drupal.profileCheck.profile) {
           Drupal.profileCheck.check(input);
         }
-      });    
+      });
     })
-    .addClass('profile-check-processed'); 
+    .addClass('profile-check-processed');
   }
 };
 
@@ -38,9 +38,9 @@ Drupal.profileCheck = {};
 Drupal.profileCheck.check = function(input) {
   clearTimeout(Drupal.profileCheck.timer);
   Drupal.profileCheck.profile = input.val();
-  
+
   $.ajax({
-    url: Drupal.settings.profileCheck.ajaxUrl,
+    url: drupalSettings.profileCheck.ajaxUrl,
     data: {profile: Drupal.profileCheck.profile},
     dataType: 'json',
     beforeSend: function() {
@@ -54,7 +54,7 @@ Drupal.profileCheck.check = function(input) {
         $("#profile-check-informer")
           .removeClass('profile-check-informer-progress')
           .addClass('profile-check-informer-accepted');
-        
+
         input
           .removeClass('error');
       }
@@ -62,7 +62,7 @@ Drupal.profileCheck.check = function(input) {
         $("#profile-check-informer")
           .removeClass('profile-check-informer-progress')
           .addClass('profile-check-informer-rejected');
-        
+
         $("#profile-check-message")
           .addClass('profile-check-message-rejected')
           .html(ret['msg'])
@@ -72,4 +72,4 @@ Drupal.profileCheck.check = function(input) {
    });
 }
 
-})(jQuery); 
+})(jQuery);

@@ -5,8 +5,6 @@ Drupal.behaviors.usernameCheck = {
   attach: function (context) {
     $('#username-check-informer:not(.username-check-processed)', context)
     .each(function() {
-      var r  = drupalSettings;
-      console.log(r);
       var input = $(this).parents('.form-item').find('input');
       Drupal.usernameCheck.username = '';
       input
