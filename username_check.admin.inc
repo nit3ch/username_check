@@ -18,7 +18,7 @@ function username_check_settings() {
     '#options' => array(
       'auto'   => t('On - executes when user leaves username field or upon timer end'),
       'off' => t('Off - No Username checking')),
-    '#default_value' => variable_get('username_check_mode', 'auto'),
+    '#default_value' => \Drupal::config('username_check.settings')->get('username_check_mode'),
   );
 
   $form['username_check_mail_mode'] = array(
@@ -27,14 +27,14 @@ function username_check_settings() {
     '#options' => array(
       'auto'   => t('On - executes when user leaves e-mail field or upon timer end'),
       'off' => t('Off - No E-mail address checking')),
-    '#default_value' => variable_get('username_check_mail_mode', 'auto'),
+    '#default_value' => \Drupal::config('username_check.settings')->get('username_check_mail_mode'),
   );
 
   $form['username_check_delay'] = array(
     '#type' => 'textfield',
     '#title' => t('Timer threshold:'),
     '#description' => t('Threshold in seconds (ex: 0.5, 1) for the check to happen.'),
-    '#default_value' => variable_get('username_check_delay', 1),
+    '#default_value' => \Drupal::config('username_check.settings')->get('username_check_delay'),
   );
 
 

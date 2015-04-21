@@ -30,7 +30,7 @@ function username_check_callback() {
 
       if ($ret) {
         $output['allowed'] = FALSE;
-        $output['msg'] = t('The username %username is already taken. If this is you, please ' . l('login,' , 'user') . ' or if you\'ve forgotten your password, ' . l('request a new password','user/password') . '.', array('%username' => $username));
+        $output['msg'] = t('The username %username is already taken. If this is you, please ' . \Drupal::l('login,', \Drupal\Core\Url::fromRoute('user.page')) . ' or if you\'ve forgotten your password, ' . \Drupal::l('request a new password', \Drupal\Core\Url::fromRoute('user.pass')) . '.', array('%username' => $username));
       }
       else {
         $output['allowed'] = TRUE;
@@ -98,7 +98,7 @@ function username_check_profile_callback() {
  * Query user table to check if this is the current user.
  */
 function _username_check_is_current_user($username) {
-  global $user;
+  $user = \Drupal::currentUser();
   return db_query("SELECT COUNT(u.name) count FROM {users} u WHERE LOWER(u.name) = LOWER(:username) AND u.uid =" . $user->uid, array(':username' => $username))->fetchField();
 }
 
@@ -134,7 +134,7 @@ function username_check_mail_callback() {
 
       if ($ret) {
         $output['allowed'] = FALSE;
-        $output['msg'] = t('The e-mail address %mail is already in the system, you have an account here. Please ' . l('login,' , 'user') . ' or if you\'ve forgotten your password, ' . l('request a new password','user/password') .'.', array('%mail' => $mail));
+        $output['msg'] = t('The e-mail address %mail is already in the system, you have an account here. Please ' . \Drupal::l('login,', \Drupal\Core\Url::fromRoute('user.page')) . ' or if you\'ve forgotten your password, ' . \Drupal::l('request a new password', \Drupal\Core\Url::fromRoute('user.pass')) .'.', array('%mail' => $mail));
       }
       else {
         $output['allowed'] = TRUE;
