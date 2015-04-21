@@ -12,6 +12,7 @@ function username_check_form_user_register_form_alter(&$form) {
   $mode     = $config->get('username_check_mode');
   $mailmode = $config->get('username_check_mail_mode', 'auto');
   $delay = $config->get('username_check_delay');
+
   if($mode != 'off') {
     $form['#attached']['library'] = array('username_check/username_check');
     $form['#attached']['drupalSettings']['usernameCheck']['ajaxUrl'] = $base_url.'/username_check/isunique';
@@ -34,6 +35,7 @@ function username_check_form_user_form_alter(&$form) {
   $config = \Drupal::config('username_check.settings');
   $mode = $config->get('username_check_mode');
   $delay = $config->get('username_check_delay');
+  
   if($mode != 'off'){
     $form['#attached']['library'] = array('username_check/username_check');
     $form['#attached']['drupalSettings']['profileCheck']['ajaxUrl'] = $base_url.'/username_check/isuniqueprofile';

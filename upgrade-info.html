@@ -74,33 +74,6 @@ aside {
   </head>
   <body>
       <details open="true" class="group">
-      <summary>Configuration</summary>
-          <details class="error">
-      <summary><code>variable_get()</code> has been removed.</summary>
-
-      
-            <h5>Documentation</h5>
-      <ul>
-                <li><a target="_blank" href="https://www.drupal.org/node/2183531">The Variable API has been removed</a></li>
-              </ul>
-      
-            <h5>Files Affected</h5>
-      <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 46</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 47</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 65</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 84</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 98</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 113</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.admin.inc, line 21</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.admin.inc, line 30</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.admin.inc, line 37</li>
-            </ul>
-      
-      <aside>Flagged by _function_call:variable_get</aside>    </details>
-
-    </details>
-      <details open="true" class="group">
       <summary>Info File</summary>
           <details class="error">
       <summary>Module info files' <code>core</code> key must have a value of <code>8.x</code>.</summary>
@@ -113,7 +86,7 @@ aside {
       
             <h5>Files Affected</h5>
       <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.info</li>
+              <li>/var/www/d8/modules/username_check/username_check.info</li>
             </ul>
       
       <aside>Flagged by info</aside>    </details>
@@ -128,7 +101,7 @@ aside {
       
             <h5>Files Affected</h5>
       <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.info</li>
+              <li>/var/www/d8/modules/username_check/username_check.info</li>
             </ul>
       
       <aside>Flagged by info</aside>    </details>
@@ -143,7 +116,7 @@ aside {
       
             <h5>Files Affected</h5>
       <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.info</li>
+              <li>/var/www/d8/modules/username_check/username_check.info</li>
             </ul>
       
       <aside>Flagged by info</aside>    </details>
@@ -158,36 +131,10 @@ aside {
       
             <h5>Files Affected</h5>
       <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.info</li>
+              <li>/var/www/d8/modules/username_check/username_check.info</li>
             </ul>
       
       <aside>Flagged by info</aside>    </details>
-
-    </details>
-      <details open="true" class="group">
-      <summary>Menu/Routing</summary>
-          <details class="error">
-      <summary><code>hook_menu()</code> has been removed from Drupal 8.</summary>
-
-      
-            <h5>Documentation</h5>
-      <ul>
-                <li><a target="_blank" href="https://www.drupal.org/node/1800686">All functionality of <code>hook_menu()</code> replaced</a></li>
-                <li><a target="_blank" href="https://www.drupal.org/node/2177901">Dynamic routes are now defined in <code>MODULE.routing.yml</code></a></li>
-                <li><a target="_blank" href="https://www.drupal.org/node/2119699">Page callbacks have been converted to controller classes</a></li>
-                <li><a target="_blank" href="https://www.drupal.org/node/2089605">Route naming convention</a></li>
-                <li><a target="_blank" href="https://www.drupal.org/node/2165243">Contextual links are now plugins defined in <code>MODULE.links.contextual.yml</code></a></li>
-                <li><a target="_blank" href="https://www.drupal.org/node/2007444">Local actions are now plugins defined in <code>MODULE.links.action.yml</code></a></li>
-                <li><a target="_blank" href="https://www.drupal.org/node/2044515">Local tasks and now plugins defined in <code>MODULE.links.task.yml</code></a></li>
-                <li><a target="_blank" href="https://www.drupal.org/node/2228089">Menu links are now defined in <code>MODULE.links.menu.yml</code></a></li>
-              </ul>
-      
-            <h5>Files Affected</h5>
-      <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 8</li>
-            </ul>
-      
-      <aside>Flagged by _flag_hook:menu</aside>    </details>
 
     </details>
       <details open="true" class="group">
@@ -203,90 +150,6 @@ aside {
       
       
           </details>
-
-    </details>
-      <details open="true" class="group">
-      <summary>Rendering</summary>
-          <details class="error">
-      <summary><code>drupal_add_css()</code> has been removed.</summary>
-
-      
-            <h5>Documentation</h5>
-      <ul>
-                <li><a target="_blank" href="https://www.drupal.org/node/2169605"><code>drupal_add_css()</code> removed</a></li>
-              </ul>
-      
-            <h5>Files Affected</h5>
-      <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 78</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 92</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 107</li>
-            </ul>
-      
-      <aside>Flagged by _function_call:drupal_add_css</aside>    </details>
-    <details class="error">
-      <summary><code>drupal_add_js()</code> has been removed.</summary>
-
-      
-            <h5>Documentation</h5>
-      <ul>
-                <li><a target="_blank" href="https://www.drupal.org/node/2169605"><code>drupal_add_js()</code> removed</a></li>
-              </ul>
-      
-            <h5>Files Affected</h5>
-      <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 79</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 81</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 93</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 95</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 108</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 110</li>
-            </ul>
-      
-      <aside>Flagged by _function_call:drupal_add_js</aside>    </details>
-
-    </details>
-      <details open="true" class="group">
-      <summary>System</summary>
-          <details class="error">
-      <summary><code>l()</code> has been removed.</summary>
-
-      
-            <h5>Documentation</h5>
-      <ul>
-                <li><a target="_blank" href="https://www.drupal.org/node/2346779"><code>l()</code> replaced by URL generation API</a></li>
-              </ul>
-      
-            <h5>Files Affected</h5>
-      <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.unique.inc, line 33</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.unique.inc, line 33</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.unique.inc, line 137</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.unique.inc, line 137</li>
-              <li>/var/www/html/d8/modules/username_check/src/Controller/DefaultController.php, line 39</li>
-              <li>/var/www/html/d8/modules/username_check/src/Controller/DefaultController.php, line 39</li>
-              <li>/var/www/html/d8/modules/username_check/src/Controller/DefaultController.php, line 123</li>
-              <li>/var/www/html/d8/modules/username_check/src/Controller/DefaultController.php, line 123</li>
-            </ul>
-      
-      <aside>Flagged by _function_call:l</aside>    </details>
-    <details class="error">
-      <summary><code>url()</code> has been removed.</summary>
-
-      
-            <h5>Documentation</h5>
-      <ul>
-                <li><a target="_blank" href="https://www.drupal.org/node/2346779"><code>url()</code> replaced by URL generation API</a></li>
-              </ul>
-      
-            <h5>Files Affected</h5>
-      <ul>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 83</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 97</li>
-              <li>/var/www/html/d8/modules/username_check/username_check.module, line 112</li>
-            </ul>
-      
-      <aside>Flagged by _function_call:url</aside>    </details>
 
     </details>
     </body>
